@@ -1,15 +1,15 @@
-package api_learning;
+package driver;
 
-import driver.DriverFactory;
 import org.apache.commons.exec.OS;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class LaunchBrowser {
+import java.time.Duration;
 
-    public static void main(String[] args) {
+public class DriverFactory {
+
+    public static WebDriver getChromeDriver() {
         String currentProjectLocation = System.getProperty("user.dir");
         String chromeDriverLocation = "";
         if(OS.isFamilyMac()) {
@@ -27,19 +27,10 @@ public class LaunchBrowser {
         System.setProperty("webdriver.chrome.driver", chromeDriverLocation);
 
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--incognito");
 
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        WebDriver driver = new ChromeDriver(chromeOptions);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
-        try {
-            Thread.sleep(3000);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        driver.get("https://sdetpro.com");
-
-        driver.quit();
+        return driver;
     }
 }
