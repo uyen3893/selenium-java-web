@@ -28,5 +28,7 @@ public class ExplicitWait implements Urls {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        driver.quit();
     }
 }
