@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import support.verification.Verifier;
+import test_flows.global.FooterTestFlow;
 import url.Urls;
 
 public class FooterTest {
@@ -41,8 +42,12 @@ public class FooterTest {
 
     }
 
-    @Test(dependsOnMethods = {"testFooterRegisterPage"})
+    @Test
     private static void testFooterCategoryPage() {
+        WebDriver driver = DriverFactory.getChromeDriver();
+        driver.get(Urls.baseUrl);
+        FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
+        footerTestFlow.verifyFooterComponent();
     }
 
     @Test(priority = 3)
