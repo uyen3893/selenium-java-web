@@ -1,13 +1,21 @@
 package test_flows.global;
 
+import models.components.global.TopMenuComponent;
+import static models.components.global.TopMenuComponent.MainCateItemComponent;
+import static models.components.global.TopMenuComponent.CateItemComponent;
 import models.components.global.footer.FooterColumnComponent;
 import models.components.global.footer.FooterComponent;
 import models.pages.BasePage;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import url.Urls;
 
+import java.security.SecureRandom;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -74,6 +82,44 @@ public class FooterTestFlow {
         testFooterColumn(footerColumnComponent, expectedLinkTexts, expectedHrefs);
     }
 
+    public void verifyProductCateFooterComponent() {
+        BasePage basePage = new BasePage(driver);
+        TopMenuComponent topMenuComponent = basePage.topMenuComponent();
+        //Get a list of menu category
+        List<MainCateItemComponent> mainCateItemComponentList = topMenuComponent.mainItemsElem();
+        if(mainCateItemComponentList.isEmpty()) {
+            Assert.fail("[ERR] Top menu items are empty!");
+        }
+
+        //Random select a category
+        MainCateItemComponent randomMainItemElem = mainCateItemComponentList.get(
+                new SecureRandom().nextInt(mainCateItemComponentList.size()));
+
+        String randomCatHref = randomMainItemElem.catItemLinkElem().getAttribute("href");
+
+        //Get a list of items from a selected category
+        List<CateItemComponent> cateItemComponentList = randomMainItemElem.cateItemComponentList();
+        //Click on Link if the list of items is empty
+        if(cateItemComponentList.isEmpty()) {
+            randomMainItemElem.catItemLinkElem().click();
+        } else {
+            //Click randomly on item on the list
+            int randomIndex = new SecureRandom().nextInt(cateItemComponentList.size());
+            CateItemComponent randomCateItemComp = cateItemComponentList.get(randomIndex);
+            randomCatHref = randomCateItemComp.getComponent().getAttribute("href");
+            randomCateItemComp.getComponent().click();
+        }
+
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+            wait.until(ExpectedConditions.urlContains(randomCatHref));
+        } catch (TimeoutException e) {
+            Assert.fail("[ERR] Target page is not matched!");
+        }
+
+        verifyFooterComponent();
+    }
+
     private void testFooterColumn(
             FooterColumnComponent footerColumnComponent, List<String> expectedLinkTexts, List<String> expectedHrefs) {
 
@@ -99,4 +145,5 @@ public class FooterTestFlow {
         Assert.assertEquals(actualHrefs.size(), expectedHrefs.size(),
                 "[ERR] Actual and expected hyperlinks are different!");
     }
+
 }

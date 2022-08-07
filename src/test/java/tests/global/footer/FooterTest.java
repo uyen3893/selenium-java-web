@@ -26,20 +26,21 @@ public class FooterTest {
 
     @Test
     private static void testFooterCategoryPage() {
+        WebDriver driver = DriverFactory.getChromeDriver();
+        try {
+            driver.get(Urls.demoBaseUrl);
+            FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
+            footerTestFlow.verifyProductCateFooterComponent();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
+
     }
 
     @Test()
      public void testFooterHomePage() {
-        WebDriver driver = DriverFactory.getChromeDriver();
-
-        try {
-            driver.get(Urls.demoBaseUrl);
-            HomePage homePage = new HomePage(driver);
-            InformationColumnComponent informationColumnComponent = homePage.footerComponent().informationColumnComponent();
-
-        } catch (Exception ignored) {}
-
-        driver.quit();
 
     }
 
