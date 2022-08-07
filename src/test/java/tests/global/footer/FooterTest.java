@@ -14,43 +14,21 @@ import url.Urls;
 
 public class FooterTest {
 
-    @Test(priority = 1)
+    @Test()
     private static void testFooterRegisterPage() {
-        String actualResult = "actual";
-        String expectedResult = "expected";
-
-//        Verifier.verifyEquals(actualResult, expectedResult);
-        //Hard assertion
-        Assert.assertEquals(actualResult, expectedResult, "[ERR] Welcome message is incorrect!");
-        Assert.assertTrue(actualResult.equals(expectedResult));
-        Assert.assertFalse(actualResult.equals(expectedResult));
-        Assert.fail();
-        Assert.fail("...");
 
     }
 
-   @Test(priority = 2)
+   @Test()
     private static void testFooterLoginPage() {
-        //Soft assertion
-       SoftAssert softAssert = new SoftAssert();
-       softAssert.assertEquals(2, 3);
-       softAssert.assertEquals(1, 1);
-       softAssert.assertEquals(5, 7);
-
-       System.out.println("Successfully");
-       softAssert.assertAll();
 
     }
 
     @Test
     private static void testFooterCategoryPage() {
-        WebDriver driver = DriverFactory.getChromeDriver();
-        driver.get(Urls.baseUrl);
-        FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
-        footerTestFlow.verifyFooterComponent();
     }
 
-    @Test(priority = 3)
+    @Test()
      public void testFooterHomePage() {
         WebDriver driver = DriverFactory.getChromeDriver();
 
@@ -59,18 +37,11 @@ public class FooterTest {
             HomePage homePage = new HomePage(driver);
             InformationColumnComponent informationColumnComponent = homePage.footerComponent().informationColumnComponent();
 
-            testFooterColumn(informationColumnComponent);
         } catch (Exception ignored) {}
 
         driver.quit();
 
     }
 
-    private void testFooterColumn(FooterColumnComponent footerColumnComponent) {
-        System.out.println(footerColumnComponent.headerElem().getText());
-        footerColumnComponent.linkElems().forEach(link -> {
-            System.out.println(link.getText());
-            System.out.println(link.getAttribute("href"));
-        });
-    }
+
 }
