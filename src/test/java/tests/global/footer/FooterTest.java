@@ -2,6 +2,7 @@ package tests.global.footer;
 
 import driver.DriverFactory;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import test_flows.global.FooterTestFlow;
 import tests.BaseTest;
@@ -11,7 +12,8 @@ public class FooterTest extends BaseTest {
 
     @Test()
     private static void testFooterRegisterPage() {
-
+        driver.get(Urls.demoBaseUrl);
+        Assert.fail("Demo taking screenshot when test is failed!");
     }
 
    @Test()
