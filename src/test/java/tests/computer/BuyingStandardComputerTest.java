@@ -19,6 +19,7 @@ public class BuyingStandardComputerTest extends BaseTest {
         OrderComputerFlow<StandardComputerComponent> orderComputerFlow =
                 new OrderComputerFlow<>(driver, StandardComputerComponent.class, computerData);
         orderComputerFlow.buildComputerSpecAndAddToCart();
+        orderComputerFlow.verifyShoppingCartPage();
     }
 
     @DataProvider
