@@ -19,6 +19,7 @@ public class BuyingCheapComputerTest extends BaseTest {
                 new OrderComputerFlow<>(driver, CheapComputerComponent.class, computerData);
         orderComputerFlow.buildComputerSpecAndAddToCart();
         orderComputerFlow.verifyShoppingCartPage();
+        orderComputerFlow.agreeTOSAndCheckout();
     }
 
     @DataProvider

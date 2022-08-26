@@ -1,13 +1,16 @@
 package test_flows.computer;
 
+import models.components.cart.CartItemRowComponent;
 import models.components.cart.TotalComponent;
 import models.components.order.ComputerEssentialComponent;
+import models.pages.CheckoutOptionsPage;
 import models.pages.ComputerItemDetailsPage;
 import models.pages.ShoppingCartPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import test_data.computer.ComputerData;
 
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -93,10 +96,52 @@ public class OrderComputerFlow<T extends ComputerEssentialComponent> {
 
     public void verifyShoppingCartPage() {
         ShoppingCartPage shoppingCartPage = new ShoppingCartPage(driver);
+        List<CartItemRowComponent> cartItemRowComps = shoppingCartPage.cartItemRowComponentList();
+        if (cartItemRowComps.isEmpty()) {
+            Assert.fail("[ERR] There is no item displayed in the shopping cart!");
+        }
+        double currentSubTotal = 0;
+        double currentTotalUnitPrice = 0;
+
+        for (CartItemRowComponent cartItemRowComp : cartItemRowComps) {
+            currentSubTotal += cartItemRowComp.getSubTotal();
+            currentTotalUnitPrice += (cartItemRowComp.getUnitPrice() * cartItemRowComp.getItemQuantity());
+        }
+
+        Assert.assertEquals(currentSubTotal, currentTotalUnitPrice, " [ERR] Shopping cart's sub-total is incorrect!");
+
         TotalComponent totalComponent = shoppingCartPage.totalComponent();
+        double checkoutSubTotal = 0;
+        double checkoutOtherFeesTotal = 0;
+        double checkoutTotal = 0;
+
         Map<String, Double> priceCategories = totalComponent.priceCategories();
         for (String priceType : priceCategories.keySet()) {
             System.out.println(priceType + ": " + priceCategories.get(priceType));
         }
+
+        for (String priceType : priceCategories.keySet()) {
+            if (priceType.startsWith("Sub-Total")) {
+                checkoutSubTotal = priceCategories.get(priceType);
+            } else if (priceType.startsWith("Total")) {
+                checkoutTotal = priceCategories.get(priceType);
+            } else {
+                checkoutOtherFeesTotal += priceCategories.get(priceType);
+            }
+        }
+
+        Assert.assertEquals(checkoutSubTotal, currentSubTotal, "[ERR] Shopping cart's sub total is incorrect!");
+        Assert.assertEquals(checkoutTotal, (checkoutSubTotal + checkoutOtherFeesTotal), "[ERR] Shopping cart's total is incorrect!");
+    }
+
+    public void agreeTOSAndCheckout() {
+        ShoppingCartPage shoppingCartPage = new ShoppingCartPage(driver);
+        TotalComponent totalComponent = shoppingCartPage.totalComponent();
+        totalComponent.agreeTOS();
+        totalComponent.checkout();
+
+        CheckoutOptionsPage checkoutOptionsPage = new CheckoutOptionsPage(driver);
+        checkoutOptionsPage.checkoutAsGuest();
+
     }
 }
