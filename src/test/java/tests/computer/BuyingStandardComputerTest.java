@@ -4,6 +4,7 @@ import models.components.order.CheapComputerComponent;
 import models.components.order.StandardComputerComponent;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import test_data.CreditCardType;
 import test_data.DataObjectBuilder;
 import test_data.computer.ComputerData;
 import test_flows.computer.OrderComputerFlow;
@@ -25,7 +26,7 @@ public class BuyingStandardComputerTest extends BaseTest {
         orderComputerFlow.inputShippingAddress();
         orderComputerFlow.inputShippingMethod();
         orderComputerFlow.selectPaymentMethod();
-        orderComputerFlow.inputPaymentInfo();
+        orderComputerFlow.inputPaymentInfo(CreditCardType.MASTER_CARD);
         orderComputerFlow.confirmOrder();
     }
 
