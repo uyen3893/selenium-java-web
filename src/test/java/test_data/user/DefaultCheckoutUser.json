@@ -1,0 +1,11 @@
+{
+  "firstName": "Firstname",
+  "lastName": "Lastname",
+  "email": "Email@email.com",
+  "country": "United States",
+  "state": "Alabama",
+  "city": "City",
+  "address1": "Address 1",
+  "zipcode": "1234",
+  "phoneNum": "9999999999"
+}

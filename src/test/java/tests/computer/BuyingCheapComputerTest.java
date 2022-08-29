@@ -20,6 +20,12 @@ public class BuyingCheapComputerTest extends BaseTest {
         orderComputerFlow.buildComputerSpecAndAddToCart();
         orderComputerFlow.verifyShoppingCartPage();
         orderComputerFlow.agreeTOSAndCheckout();
+        orderComputerFlow.inputBillingAddress();
+        orderComputerFlow.inputShippingAddress();
+        orderComputerFlow.inputShippingMethod();
+        orderComputerFlow.selectPaymentMethod();
+        orderComputerFlow.inputPaymentInfo();
+        orderComputerFlow.confirmOrder();
     }
 
     @DataProvider
