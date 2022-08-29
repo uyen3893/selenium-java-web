@@ -8,6 +8,7 @@ import models.pages.CheckoutOptionsPage;
 import models.pages.CheckoutPage;
 import models.pages.ComputerItemDetailsPage;
 import models.pages.ShoppingCartPage;
+import org.checkerframework.checker.units.qual.A;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import test_data.CreditCardType;
@@ -28,6 +29,7 @@ public class OrderComputerFlow<T extends ComputerEssentialComponent> {
     private final ComputerData computerData;
     private final int quantity;
     private double totalPrice;
+    private String randomShippingMethod;
     private UserDataObject defaultCheckoutUser;
     private PaymentMethod paymentMethod;
     private CreditCardType creditCardType;
@@ -182,10 +184,10 @@ public class OrderComputerFlow<T extends ComputerEssentialComponent> {
 
     public void inputShippingMethod() {
         List<String> shippingMethods = Arrays.asList("Ground", "Next Day Air", "2nd Day Air");
-        String randomShippingMethod = shippingMethods.get(new SecureRandom().nextInt(shippingMethods.size()));
+        this.randomShippingMethod = shippingMethods.get(new SecureRandom().nextInt(shippingMethods.size()));
         CheckoutPage checkoutPage = new CheckoutPage(driver);
         ShippingMethodComponent shippingMethodComponent = checkoutPage.shippingMethodComponent();
-        shippingMethodComponent.selectShippingMethod(randomShippingMethod);
+        shippingMethodComponent.selectShippingMethod(this.randomShippingMethod);
         shippingMethodComponent.clickOnContinueBtn();
     }
 
@@ -257,6 +259,67 @@ public class OrderComputerFlow<T extends ComputerEssentialComponent> {
     }
 
     public void confirmOrder() {
-        Assert.fail();
+        CheckoutPage checkoutPage = new CheckoutPage(driver);
+
+        //Verify billing address information
+        BillingInfoComponent billingInfoComponent = checkoutPage.billingInfoComponent();
+        billingInfoComponent.verifyNameBillingInfo(defaultCheckoutUser.getFirstName(), defaultCheckoutUser.getLastName());
+        billingInfoComponent.verifyEmailBillingInfo(defaultCheckoutUser.getEmail());
+        billingInfoComponent.verifyPhoneBillingInfo(defaultCheckoutUser.getPhoneNum());
+        billingInfoComponent.verifyAddressBillingInfo(defaultCheckoutUser.getAddress1());
+        billingInfoComponent.verifyCityAndStateBillingInfo(defaultCheckoutUser.getCity(), defaultCheckoutUser.getState(), defaultCheckoutUser.getZipcode());
+        billingInfoComponent.verifyCountryBillingInfo(defaultCheckoutUser.getCountry());
+        billingInfoComponent.verifyPaymentMethod(paymentMethod);
+
+        //Verify shipping address information
+        ShippingInfoComponent shippingInfoComponent = checkoutPage.shippingInfoComponent();
+        shippingInfoComponent.verifyNameShippingInfo(defaultCheckoutUser.getFirstName(), defaultCheckoutUser.getLastName());
+        shippingInfoComponent.verifyEmailShippingInfo(defaultCheckoutUser.getEmail());
+        shippingInfoComponent.verifyPhoneShippingInfo(defaultCheckoutUser.getPhoneNum());
+        shippingInfoComponent.verifyAddressShippingInfo(defaultCheckoutUser.getAddress1());
+        shippingInfoComponent.verifyCityAndStateShippingInfo(defaultCheckoutUser.getCity(), defaultCheckoutUser.getState(), defaultCheckoutUser.getZipcode());
+        shippingInfoComponent.verifyCountryShippingInfo(defaultCheckoutUser.getCountry());
+        shippingInfoComponent.verifyShippingMethod(randomShippingMethod);
+
+        //Verify total price of each row
+        List<CartItemRowsComponent> cartItemRowsComponentList = checkoutPage.cartItemRowsComponent();
+        for (CartItemRowsComponent cartItemRowsComponent : cartItemRowsComponentList) {
+            Assert.assertEquals(cartItemRowsComponent.getProductSubTotal(), (cartItemRowsComponent.getUnitPrice() * cartItemRowsComponent.getQuantity()),
+                    "[ERR] Total price of each row is incorrect!");
+        }
+
+        ConfirmOrderComponent confirmOrderComponent = checkoutPage.confirmOrderComponent();
+
+        //Verify total price with extra fees
+        double currentSubTotal = 0;
+        double currentFees = 0;
+        double currentTotal = 0;
+        Map<String, Double> priceCategories = confirmOrderComponent.priceCategories();
+        for (String priceType : priceCategories.keySet()) {
+            double priceValue = priceCategories.get(priceType);
+            if (priceType.startsWith("Sub-Total")) {
+                currentSubTotal = priceValue;
+            } else if (priceType.startsWith("Total")) {
+                currentTotal = priceValue;
+            } else {
+                currentFees = currentFees + priceValue;
+            }
+        }
+
+        Assert.assertEquals(currentTotal, (currentSubTotal+currentFees), "[ERR] The total price is incorrect!");
+
+        //Verify sub total
+        double currentSubTotalAllRow = 0;
+        for (CartItemRowsComponent cartItemRowsComponent : cartItemRowsComponentList) {
+            currentSubTotalAllRow = currentSubTotalAllRow + (cartItemRowsComponent.getQuantity() * cartItemRowsComponent.getUnitPrice());
+        }
+        Assert.assertEquals(currentSubTotal, currentSubTotalAllRow, "[ERR] Sub total of all row is incorrect!");
+
+        confirmOrderComponent.clickOnContinueBtn();
     }
+
+
+
+
+
 }

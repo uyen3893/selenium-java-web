@@ -3,6 +3,8 @@ package models.pages;
 import models.components.checkout.*;
 import org.openqa.selenium.WebDriver;
 
+import java.util.List;
+
 public class CheckoutPage extends BasePage{
 
     public CheckoutPage(WebDriver driver) {
@@ -31,5 +33,17 @@ public class CheckoutPage extends BasePage{
 
     public ConfirmOrderComponent confirmOrderComponent() {
         return findComponent(ConfirmOrderComponent.class, driver);
+    }
+
+    public BillingInfoComponent billingInfoComponent() {
+        return findComponent(BillingInfoComponent.class, driver);
+    }
+
+    public ShippingInfoComponent shippingInfoComponent() {
+        return findComponent(ShippingInfoComponent.class, driver);
+    }
+
+    public List<CartItemRowsComponent> cartItemRowsComponent() {
+        return findComponents(CartItemRowsComponent.class, driver);
     }
 }
