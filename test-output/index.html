@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Regression">
+              <span class="suite-name border-failed">Regression</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Regression">
+                    <span>[unset file name]</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Regression">
+                    <span class="test-stats">4 tests</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Regression">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Regression">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Regression">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Regression">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Regression">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">10 methods, 1 failed,   9 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Regression" class="hide-methods failed suite-Regression"> (hide)</a> <!-- hide-methods failed suite-Regression -->
+                      <a href="#" panel-name="suite-Regression" class="show-methods failed suite-Regression"> (show)</a> <!-- show-methods failed suite-Regression -->
+                    </span>
+                    <div class="method-list-content failed suite-Regression">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression" title="tests.global.footer.FooterTest" hash-for-method="testFooterRegisterPage">testFooterRegisterPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Regression -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Regression" class="hide-methods passed suite-Regression"> (hide)</a> <!-- hide-methods passed suite-Regression -->
+                      <a href="#" panel-name="suite-Regression" class="show-methods passed suite-Regression"> (show)</a> <!-- show-methods passed suite-Regression -->
+                    </span>
+                    <div class="method-list-content passed suite-Regression">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression" title="tests.computer.BuyingCheapComputerTest" hash-for-method="testCheapComputerBuying(ComputerData{processorType=&#039;Fast&#039;, ram=&#039;8 GB&#039;, hdd=&#039;320 GB&#039;, software=&#039;Image Viever&#039;, os=&#039;null&#039;})">testCheapComputerBuying(ComputerData{processorType='Fast', ram='8 GB', hdd='320 GB', software='Image Viever', os='null'})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression" title="tests.computer.BuyingCheapComputerTest" hash-for-method="testCheapComputerBuying(ComputerData{processorType=&#039;Fast&#039;, ram=&#039;4 GB&#039;, hdd=&#039;400 GB&#039;, software=&#039;Office Suite&#039;, os=&#039;null&#039;})">testCheapComputerBuying(ComputerData{processorType='Fast', ram='4 GB', hdd='400 GB', software='Office Suite', os='null'})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression" title="tests.computer.BuyingCheapComputerTest" hash-for-method="testCheapComputerBuying(ComputerData{processorType=&#039;Fast&#039;, ram=&#039;2 GB&#039;, hdd=&#039;320 GB&#039;, software=&#039;Other Office Suite&#039;, os=&#039;null...)">testCheapComputerBuying(ComputerData{processorType='Fast', ram='2 GB', hdd='320 GB', software='Other Office Suite', os='null...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression" title="tests.global.footer.FooterTest" hash-for-method="testFooterCategoryPage">testFooterCategoryPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression" title="tests.global.footer.FooterTest" hash-for-method="testFooterHomePage">testFooterHomePage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression" title="tests.global.footer.FooterTest" hash-for-method="testFooterLoginPage">testFooterLoginPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression" title="tests.computer.BuyingStandardComputerTest" hash-for-method="testStandardComputerBuying(ComputerData{processorType=&#039;2.2GHz&#039;, ram=&#039;8GB&#039;, hdd=&#039;400 GB&#039;, software=&#039;Microsoft Office&#039;, os=&#039;Ubunt...)">testStandardComputerBuying(ComputerData{processorType='2.2GHz', ram='8GB', hdd='400 GB', software='Microsoft Office', os='Ubunt...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression" title="tests.computer.BuyingStandardComputerTest" hash-for-method="testStandardComputerBuying(ComputerData{processorType=&#039;2.5GHz&#039;, ram=&#039;4GB&#039;, hdd=&#039;320 GB&#039;, software=&#039;Acrobat Reader&#039;, os=&#039;Windows...)">testStandardComputerBuying(ComputerData{processorType='2.5GHz', ram='4GB', hdd='320 GB', software='Acrobat Reader', os='Windows...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression" title="tests.computer.BuyingStandardComputerTest" hash-for-method="testStandardComputerBuying(ComputerData{processorType=&#039;2.2GHz&#039;, ram=&#039;2GB&#039;, hdd=&#039;320 GB&#039;, software=&#039;Total Commander&#039;, os=&#039;Window...)">testStandardComputerBuying(ComputerData{processorType='2.2GHz', ram='2GB', hdd='320 GB', software='Total Commander', os='Window...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Regression -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Regression" class="panel Regression">
+          <div class="suite-Regression-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">tests.global.footer.FooterTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testFooterRegisterPage">
+                  </a> <!-- testFooterRegisterPage -->
+                  <span class="method-name">testFooterRegisterPage</span>
+                  <div class="stack-trace">java.lang.AssertionError: Demo taking screenshot when test is failed!
+	at tests.global.footer.FooterTest.testFooterRegisterPage(FooterTest.java:17)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 19 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Regression-class-failed -->
+          <div class="suite-Regression-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">tests.computer.BuyingStandardComputerTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testStandardComputerBuying(ComputerData{processorType=&#039;2.2GHz&#039;, ram=&#039;8GB&#039;, hdd=&#039;400 GB&#039;, software=&#039;Microsoft Office&#039;, os=&#039;Ubunt...)">
+                  </a> <!-- testStandardComputerBuying(ComputerData{processorType='2.2GHz', ram='8GB', hdd='400 GB', software='Microsoft Office', os='Ubunt...) -->
+                  <span class="method-name">testStandardComputerBuying</span>
+                  <span class="parameters">(ComputerData{processorType='2.2GHz', ram='8GB', hdd='400 GB', software='Microsoft Office', os='Ubuntu'})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testStandardComputerBuying(ComputerData{processorType=&#039;2.5GHz&#039;, ram=&#039;4GB&#039;, hdd=&#039;320 GB&#039;, software=&#039;Acrobat Reader&#039;, os=&#039;Windows...)">
+                  </a> <!-- testStandardComputerBuying(ComputerData{processorType='2.5GHz', ram='4GB', hdd='320 GB', software='Acrobat Reader', os='Windows...) -->
+                  <span class="method-name">testStandardComputerBuying</span>
+                  <span class="parameters">(ComputerData{processorType='2.5GHz', ram='4GB', hdd='320 GB', software='Acrobat Reader', os='Windows 7'})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testStandardComputerBuying(ComputerData{processorType=&#039;2.2GHz&#039;, ram=&#039;2GB&#039;, hdd=&#039;320 GB&#039;, software=&#039;Total Commander&#039;, os=&#039;Window...)">
+                  </a> <!-- testStandardComputerBuying(ComputerData{processorType='2.2GHz', ram='2GB', hdd='320 GB', software='Total Commander', os='Window...) -->
+                  <span class="method-name">testStandardComputerBuying</span>
+                  <span class="parameters">(ComputerData{processorType='2.2GHz', ram='2GB', hdd='320 GB', software='Total Commander', os='Windows 10'})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Regression-class-passed -->
+          <div class="suite-Regression-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">tests.global.footer.FooterTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testFooterCategoryPage">
+                  </a> <!-- testFooterCategoryPage -->
+                  <span class="method-name">testFooterCategoryPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testFooterHomePage">
+                  </a> <!-- testFooterHomePage -->
+                  <span class="method-name">testFooterHomePage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testFooterLoginPage">
+                  </a> <!-- testFooterLoginPage -->
+                  <span class="method-name">testFooterLoginPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Regression-class-passed -->
+          <div class="suite-Regression-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">tests.computer.BuyingCheapComputerTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCheapComputerBuying(ComputerData{processorType=&#039;Fast&#039;, ram=&#039;8 GB&#039;, hdd=&#039;320 GB&#039;, software=&#039;Image Viever&#039;, os=&#039;null&#039;})">
+                  </a> <!-- testCheapComputerBuying(ComputerData{processorType='Fast', ram='8 GB', hdd='320 GB', software='Image Viever', os='null'}) -->
+                  <span class="method-name">testCheapComputerBuying</span>
+                  <span class="parameters">(ComputerData{processorType='Fast', ram='8 GB', hdd='320 GB', software='Image Viever', os='null'})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCheapComputerBuying(ComputerData{processorType=&#039;Fast&#039;, ram=&#039;4 GB&#039;, hdd=&#039;400 GB&#039;, software=&#039;Office Suite&#039;, os=&#039;null&#039;})">
+                  </a> <!-- testCheapComputerBuying(ComputerData{processorType='Fast', ram='4 GB', hdd='400 GB', software='Office Suite', os='null'}) -->
+                  <span class="method-name">testCheapComputerBuying</span>
+                  <span class="parameters">(ComputerData{processorType='Fast', ram='4 GB', hdd='400 GB', software='Office Suite', os='null'})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCheapComputerBuying(ComputerData{processorType=&#039;Fast&#039;, ram=&#039;2 GB&#039;, hdd=&#039;320 GB&#039;, software=&#039;Other Office Suite&#039;, os=&#039;null...)">
+                  </a> <!-- testCheapComputerBuying(ComputerData{processorType='Fast', ram='2 GB', hdd='320 GB', software='Other Office Suite', os='null...) -->
+                  <span class="method-name">testCheapComputerBuying</span>
+                  <span class="parameters">(ComputerData{processorType='Fast', ram='2 GB', hdd='320 GB', software='Other Office Suite', os='null'})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Regression-class-passed -->
+        </div> <!-- panel Regression -->
+        <div panel-name="test-xml-Regression" class="panel">
+          <div class="main-panel-header rounded-window-top">
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite thread-count=&quot;4&quot; name=&quot;Regression&quot; parallel=&quot;tests&quot;&gt;
+  &lt;test thread-count=&quot;4&quot; name=&quot;Group 2&quot; parallel=&quot;tests&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;tests.computer.BuyingStandardComputerTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Group 2 --&gt;
+  &lt;test thread-count=&quot;4&quot; name=&quot;Group 1&quot; parallel=&quot;tests&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;tests.computer.BuyingCheapComputerTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Group 1 --&gt;
+  &lt;test thread-count=&quot;4&quot; name=&quot;Group 4&quot; parallel=&quot;tests&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;tests.global.footer.FooterTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Group 4 --&gt;
+  &lt;test thread-count=&quot;4&quot; name=&quot;Group 3&quot; parallel=&quot;tests&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;tests.global.footer.FeatureProductTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Group 3 --&gt;
+&lt;/suite&gt; &lt;!-- Regression --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Regression" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Regression</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Group 2 (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Group 1 (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Group 4 (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Group 3 (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Regression" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Regression</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Regression" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Regression</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Regression');
+function tableData_Regression() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(10);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'testStandardComputerBuying')
+data.setCell(0, 2, 'tests.computer.BuyingStandardComputerTest')
+data.setCell(0, 3, 43647);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testCheapComputerBuying')
+data.setCell(1, 2, 'tests.computer.BuyingCheapComputerTest')
+data.setCell(1, 3, 42515);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testFooterCategoryPage')
+data.setCell(2, 2, 'tests.global.footer.FooterTest')
+data.setCell(2, 3, 16131);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testCheapComputerBuying')
+data.setCell(3, 2, 'tests.computer.BuyingCheapComputerTest')
+data.setCell(3, 3, 14861);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'testCheapComputerBuying')
+data.setCell(4, 2, 'tests.computer.BuyingCheapComputerTest')
+data.setCell(4, 3, 14367);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'testStandardComputerBuying')
+data.setCell(5, 2, 'tests.computer.BuyingStandardComputerTest')
+data.setCell(5, 3, 13484);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'testStandardComputerBuying')
+data.setCell(6, 2, 'tests.computer.BuyingStandardComputerTest')
+data.setCell(6, 3, 13420);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'testFooterRegisterPage')
+data.setCell(7, 2, 'tests.global.footer.FooterTest')
+data.setCell(7, 3, 700);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'testFooterLoginPage')
+data.setCell(8, 2, 'tests.global.footer.FooterTest')
+data.setCell(8, 3, 2);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'testFooterHomePage')
+data.setCell(9, 2, 'tests.global.footer.FooterTest')
+data.setCell(9, 3, 2);
+window.suiteTableData['Regression']= { tableData: data, tableDiv: 'times-div-Regression'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <div id="times-div-Regression">
+              </div> <!-- times-div-Regression -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Regression" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Regression</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Regression" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Regression" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.computer.BuyingStandardComputerTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">initBrowserSession(chrome)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.computer.BuyingCheapComputerTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">initBrowserSession(chrome)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.global.footer.FooterTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">initBrowserSession(chrome)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="test-method">
+                <span class="method-name">testFooterCategoryPage</span>
+                <span class="method-start">25 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.computer.BuyingStandardComputerTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">testStandardComputerBuying(ComputerData{processorType='2.2GHz', ram='8GB', hdd='400 GB', software='Microsoft Office', os='Ubunt...)</span>
+                <span class="method-start">68 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.computer.BuyingCheapComputerTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">testCheapComputerBuying(ComputerData{processorType='Fast', ram='8 GB', hdd='320 GB', software='Image Viever', os='null'})</span>
+                <span class="method-start">68 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.global.footer.FooterTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">captureScreenshot([TestResult name=testFooterCategoryPage status=SUCCESS method=FooterTest.testFooterCategoryPage()[pr...)</span>
+                <span class="method-start">16163 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">testFooterHomePage</span>
+                <span class="method-start">16167 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">captureScreenshot([TestResult name=testFooterHomePage status=SUCCESS method=FooterTest.testFooterHomePage()[pri:0, ins...)</span>
+                <span class="method-start">16170 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">testFooterLoginPage</span>
+                <span class="method-start">16173 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">captureScreenshot([TestResult name=testFooterLoginPage status=SUCCESS method=FooterTest.testFooterLoginPage()[pri:0, i...)</span>
+                <span class="method-start">16176 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testFooterRegisterPage</span>
+                <span class="method-start">16177 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">captureScreenshot([TestResult name=testFooterRegisterPage status=FAILURE method=FooterTest.testFooterRegisterPage()[pr...)</span>
+                <span class="method-start">16881 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-test after">
+                <span class="method-name">closeBrowserSession</span>
+                <span class="method-start">17166 ms</span>
+              </div> <!-- configuration-test after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.computer.BuyingCheapComputerTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">captureScreenshot([TestResult name=testCheapComputerBuying status=SUCCESS method=BuyingCheapComputerTest.testCheapComp...)</span>
+                <span class="method-start">42584 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">testCheapComputerBuying(ComputerData{processorType='Fast', ram='4 GB', hdd='400 GB', software='Office Suite', os='null'})</span>
+                <span class="method-start">42585 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.computer.BuyingStandardComputerTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">captureScreenshot([TestResult name=testStandardComputerBuying status=SUCCESS method=BuyingStandardComputerTest.testSta...)</span>
+                <span class="method-start">43716 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">testStandardComputerBuying(ComputerData{processorType='2.5GHz', ram='4GB', hdd='320 GB', software='Acrobat Reader', os='Windows...)</span>
+                <span class="method-start">43718 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.computer.BuyingCheapComputerTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">captureScreenshot([TestResult name=testCheapComputerBuying status=SUCCESS method=BuyingCheapComputerTest.testCheapComp...)</span>
+                <span class="method-start">56954 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">testCheapComputerBuying(ComputerData{processorType='Fast', ram='2 GB', hdd='320 GB', software='Other Office Suite', os='null...)</span>
+                <span class="method-start">56956 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.computer.BuyingStandardComputerTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">captureScreenshot([TestResult name=testStandardComputerBuying status=SUCCESS method=BuyingStandardComputerTest.testSta...)</span>
+                <span class="method-start">57204 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">testStandardComputerBuying(ComputerData{processorType='2.2GHz', ram='2GB', hdd='320 GB', software='Total Commander', os='Window...)</span>
+                <span class="method-start">57205 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">captureScreenshot([TestResult name=testStandardComputerBuying status=SUCCESS method=BuyingStandardComputerTest.testSta...)</span>
+                <span class="method-start">70627 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-test after">
+                <span class="method-name">closeBrowserSession</span>
+                <span class="method-start">70628 ms</span>
+              </div> <!-- configuration-test after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.computer.BuyingCheapComputerTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">captureScreenshot([TestResult name=testCheapComputerBuying status=SUCCESS method=BuyingCheapComputerTest.testCheapComp...)</span>
+                <span class="method-start">71822 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-test after">
+                <span class="method-name">closeBrowserSession</span>
+                <span class="method-start">71823 ms</span>
+              </div> <!-- configuration-test after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

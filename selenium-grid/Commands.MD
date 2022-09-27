@@ -13,6 +13,7 @@ Note: IF you are on Windows OS, please remove part related to safari and add for
 ```
 java -jar -Dwebdriver.<type>.<name>s path/to/selenium/server.jar node --config /path/to/nodeConfig.json
 java -jar selenium-server-4.4.0.jar node --config node_config.json
+java -jar -Dwebdriver.gecko.driver="D:\SOURCE_CODE\selenium-java-web\selenium-grid\geckodriver.exe" -Dwebdriver.chrome.driver="D:\SOURCE_CODE\selenium-java-web\selenium-grid\chromedriver.exe" selenium-server-4.4.0.jar node --config node_config.json
 
 ```
 
