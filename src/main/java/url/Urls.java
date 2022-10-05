@@ -11,5 +11,6 @@ public interface Urls {
     String dynamicControlsSlug = "/dynamic_controls";
     String floatingMenuSlug = "/floating_menu";
 
-    String demoBaseUrl = "http://demowebshop.tricentis.com/";
+//    String demoBaseUrl = "http://demowebshop.tricentis.com/";
+    String demoBaseUrl = System.getProperty("baseUrl");
 }
